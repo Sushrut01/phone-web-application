@@ -1,0 +1,29 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/phonebook" method="POST" autocomplete="off">
+  <input type="hidden" name="_id" value="{{phonebook._id}}">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" name="name" placeholder="Full Name" value="{{phonebook.name}}">
+    <div class="text-danger">{{phonebook.nameError}}</div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" name="email" placeholder="Email Address" value="{{phonebook.email}}">
+    <div class="text-danger">{{phonebook.emailError}}</div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Mobile</label>
+      <input type="text" class="form-control" name="mobile" placeholder="Contact Number" value="{{phonebook.mobile}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label>DOB</label>
+      <input type="text" class="form-control" name="dob" placeholder="Date of Birth" value="{{phonebook.dob}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+    <a class="btn btn-secondary" href="/phonebook/list"><i class="fa fa-list-alt"></i> View Contacts</a>
+  </div>
+</form>

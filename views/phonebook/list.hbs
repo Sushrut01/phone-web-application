@@ -1,0 +1,52 @@
+<h3><a class="btn btn-secondary" href="/phonebook"><i class="fa fa-plus"></i> Add New</a> Contact List</h3>
+<!-- Search form -->
+<div class="input-group">
+    <input type="text" class="form-control" placeholder="Search contacts">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" type="button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>DOB</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.dob}}</td>
+            <td>
+                <a href="/phonebook/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/phonebook/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<!--Pagination starts-->
+<nav aria-label="Page navigation example" style="padding-left:280px;">
+  <ul class="pagination pg-blue">
+    <li class="page-item ">
+      <a class="page-link" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link">1</a></li>
+    <li class="page-item active">
+      <a class="page-link">2 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link">3</a></li>
+    <li class="page-item ">
+      <a class="page-link">Next</a>
+    </li>
+  </ul>
+</nav>
